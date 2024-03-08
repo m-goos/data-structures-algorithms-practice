@@ -1,12 +1,13 @@
 /**
+ * **Goal**: Find the largest binary gap for the input number `N`.
  *
- * Goal: Find the largest binary gap for the input number `N`
  * A binary gap is the number of zeros that have a `1` before and after them:
  * - `010001` --> 3
  * - `001010` --> 1
  * - `111111` --> 0
+ * - `101001` --> 2
  *
- * steps:
+ * **Steps**:
  * - convert number to binary
  * - check binary (loop) until a `1` is found
  * - if a `1` is found, start counting `0`s that follow it
@@ -14,9 +15,10 @@
  *   - only store gap if it exceeds previously stored gap
  * - return `gap`
  *
- *
  * @param N
  * @returns
+ *
+ * @SEE https://app.codility.com/programmers/lessons/1-iterations/
  */
 function solution(N: number): number {
   const binary = N.toString(2);
