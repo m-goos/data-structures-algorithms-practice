@@ -8,6 +8,12 @@ To run:
 # ts-node runs TypeScript directly
 npm i -g ts-node
 
+ts-node codePuzzle.ts
+```
+
+When writing code, use `nodemon` instead:
+
+```sh
 # nodemon watches a file, so it keeps refreshing output in the console
 npm i -g nodemon
 
