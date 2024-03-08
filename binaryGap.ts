@@ -67,15 +67,16 @@ const testCases: {
   { input: 328, expected: 2 },
   { input: 529, expected: 4 },
   { input: 1162, expected: 3 },
+  { input: 1376796946, expected: 5 },
 ];
 
 testCases.map((t) => {
   console.log(
-    t.input,
+    solution(t.input),
     "/",
     t.expected,
     "/",
-    solution(t.input),
-    "input / expected / solution"
+    t.input,
+    "solution / expected / input"
   );
 });
