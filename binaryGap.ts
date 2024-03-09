@@ -7,7 +7,7 @@
  * - `111111` --> 0
  * - `101001` --> 2
  *
- * **Steps**:
+ * **Approach:**:
  * - convert number to binary
  * - check binary (loop) until a `1` is found
  * - if a `1` is found, start counting `0`s that follow it
@@ -20,7 +20,7 @@
  *
  * @SEE https://app.codility.com/programmers/lessons/1-iterations/
  */
-function solution(N: number): number {
+function binaryGap(N: number): number {
   const binary = N.toString(2);
   // console.log(binary); // sanity check
 
@@ -54,7 +54,7 @@ function solution(N: number): number {
   return gap;
 }
 
-const testCases: {
+const testBinaryGap: {
   input: number;
   expected: number;
 }[] = [
@@ -70,9 +70,9 @@ const testCases: {
   { input: 1376796946, expected: 5 },
 ];
 
-testCases.map((t) => {
+testBinaryGap.map((t) => {
   console.log(
-    solution(t.input),
+    binaryGap(t.input),
     "/",
     t.expected,
     "/",
