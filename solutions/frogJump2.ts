@@ -9,6 +9,8 @@ function frogJump2(X: number, Y: number, D: number): number {
    * Rounding up can be done in multiple ways, e.g.:
    * - using the remainder operator (`%`)
    * - using the built-in Math.ceil
+   *
+   * @SEE https://app.codility.com/programmers/lessons/3-time_complexity/frog_jmp/
    */
 
   const distanceToGo = Y - X;
