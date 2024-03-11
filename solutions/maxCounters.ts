@@ -1,3 +1,5 @@
+// note: first iteration, not optimized for performance
+
 /**
  * - pass in a length and value
  * - set the value for every element of the array
