@@ -18,7 +18,6 @@
  * @SEE https://app.codility.com/programmers/lessons/4-counting_elements/frog_river_one/
  */
 function frogRiverOne(X: number, A: number[]): number {
-  const oppositeBank = X;
   let requiredLeaves: number[] = [];
   let completedIndex;
 
@@ -57,8 +56,17 @@ function frogRiverOne(X: number, A: number[]): number {
 }
 
 /**
- * Alternative
- * - find number 1 in provided `A`; find number 2, ...
+ * Alternative solution, quicker and simpler:
+ * - keep track of the remaining number of leaves to complete the 'bridge of leaves' (`missingLeaves = X`)
+ * - when the missing leaves = 0; the leave bridge is complete
  *
- * Another way would be to collect values needed in an array and verify the path is complete.
+ * - keep an array that tracks whether a leave has fallen in a position or not: `coveredPositions`
+ * - the `coveredPositions` has a length of `X`: the required length of the leave bridge: `coveredPositions = new Array(X)`
+ * - when a leave falls in a position and it has not fallen there yet, do 2 things:
+ *   - mark the leave as fallen in the array: use a `1` or a boolean
+ *   - subtract `1` from `missingLeaves`
+ *
+ * Return:
+ * - in the loop for checking `coveredPositions`: when `missingLeaves` === 0 --> return the index of `A`
+ * - if the leave bridge is never completed, `missingLeaves` never gets to 0. In that case, return `-1`
  */

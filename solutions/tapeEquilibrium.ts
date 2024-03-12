@@ -1,15 +1,4 @@
 /**
- * NOTE - More efficient solution:
- *
- * alternative approach, should be much more efficient:
- * - get the sum of the left part
- * - get and store the total sum, once
- * - subtract the left part of the total sum to get the right part
- *
- * the sum of the left part can be updated every time by just one element (sum += Array[i])
- */
-
-/**
  * Problem: Array A represents numbers on a tape.
  * - Any integer P, such that 0 < P < N, splits this tape into two non-empty parts
  * - Return the minimal _absolute_ difference that can be achieved when subtracting the sum of the parts before P and after P
@@ -80,3 +69,16 @@ function tapeEquilibrium(A: number[]): number {
 
   return minimalDifference;
 }
+
+/**
+ * NOTE - More efficient solution:
+ *
+ * alternative approach, should be much more efficient:
+ * - get and store the total sum
+ * - get (or just update) the sum of the left part (`leftSum`)
+ * - subtract the left sum from the total sum to get the right sum
+ * - keep the absolute difference in a variable
+ * - calculate the difference, update it if the absolute value is smaller than current difference
+ *
+ * Note: the sum of the left part can be updated every time by just one element (sum += Array[i])
+ */

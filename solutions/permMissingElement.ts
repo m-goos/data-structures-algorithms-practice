@@ -53,3 +53,15 @@ function permMissingElement(A: number[]): number {
 
   return missingElement;
 }
+
+/**
+ * Alternative solution: Use Gauss equation
+ *
+ * ```ts
+ * const n = A.length;
+ * const expectedSum = (n + 1) * (n + 2) / 2;
+ * ```
+ * 1. Get expected sum of array for length --> expectedSum
+ * 2. Get actual sum of array --> actualSum
+ * 3. Missing number: missing = expectedSum - actualSum
+ */

@@ -1,6 +1,8 @@
-// note: first iteration, not optimized for performance
+// note: first iteration, not optimized for performance --> see comment below
 
 /**
+ * **HELPER FUNCTION**
+ *
  * - pass in a length and value
  * - set the value for every element of the array
  *
@@ -19,9 +21,6 @@ function createArrayWithValue(length: number, value: number): number[] {
 }
 
 /**
- * Problem:
- * -
- *
  * @param N number of counters - 2 operations:
  * - increase(X) - counter is increased by 1
  * - max counter - all counters are set to the maximum value of any counter
@@ -34,6 +33,8 @@ function createArrayWithValue(length: number, value: number): number[] {
  *
  * Assumptions
  * - array always has values
+ *
+ * @SEE https://app.codility.com/programmers/lessons/4-counting_elements/max_counters/
  */
 function maxCounters(N: number, A: number[]): number[] {
   // create initial counters
@@ -97,3 +98,11 @@ function maxCounters(N: number, A: number[]): number[] {
 
   return counters;
 }
+
+/**
+ * Alternative solution 1:
+ * - track the highest counter value in a variable; use this instead of the sorting to simplify the condition
+ * --> this eliminates one nested loop (the `sort` method)
+ * - use built-in `Array(length).fill(value)` instead of (nested) for loop (my helper function) to speed up execution
+ * --> let array = Array(3).fill(5) --> array = [5,5,5]
+ */

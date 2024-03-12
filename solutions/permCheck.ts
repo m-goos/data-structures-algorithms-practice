@@ -30,7 +30,6 @@ function permCheck(A: number[]): number {
     return 0;
   }
 
-  // loop over array, print each item
   for (let i = 0; i < A.length; i++) {
     // start checking at index of 1
     if (i > 0 && A[i] - A[i - 1] !== 1) {
@@ -53,3 +52,32 @@ function permCheck(A: number[]): number {
   // A is a permutation
   return 1;
 }
+
+/**
+ * Alternative solution 1: different condition in `if` statement.
+ *
+ * Instead of comparing elements in the array, compare the element against `i` of the for-loop
+ * ```ts
+ * for(let i = 0; i < A.length; i++) {
+ *   // at i=0, we expect a `1`.
+ *   // at i=1, we expect the number 2
+ *   if(A[i] !== i+1) {
+ *     return 0;
+ *   }
+ * }
+ * ```
+ *
+ * Alternative solution 2: to avoid using sort, create a hash of the required values.
+ *
+ * - Create a hash map of required values
+ * - fill has with { 1: 1, ... A.length: 1 }
+ * --> for A=[1,2,4], hash should be `hash= {1: 1, 2: 1, 3: 1}`
+ *
+ * Now loop over array `A`:
+ * - if the current item in the array does not exist in the hash, the array is not a permutation (return 0)
+ * - if the current item exists in the hash, delete it from the hash map
+ *
+ * By the end, the hash should be empty. If it's not empty, the array is not a permutation
+ * - `return Object.keys(hash).length === 0 ? 1 : 0` // return `1` for permutation, return `0` otherwise.
+ *
+ */
