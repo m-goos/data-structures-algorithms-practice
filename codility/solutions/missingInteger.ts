@@ -105,3 +105,19 @@ testMissingInteger.map((t) => {
     "solution / expected / input"
   );
 });
+
+/**
+ * Alternative solution:
+ * - after sorting, logic can be massively simplified:
+ * - sort the array
+ *   - after sorting, A[0] > 0 --> otherwise, return 1
+ *   --> now the logic for removing negative integers can be removed
+ *   - next: the array should start with A[0] = 1; otherwise, 1 is the missing number
+ *
+ *   next:
+ *   - while looping over the array, every element should match `i+1`
+ *   --> A=[1,2,3]
+ *     - i=0; A[0]=1; i+1=1;
+ *   --> A=[1,2,3,4,5,6,7]
+ *     - i=5; A[5]=6; i+1=6
+ */
