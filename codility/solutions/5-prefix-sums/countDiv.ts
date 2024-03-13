@@ -14,7 +14,7 @@
  * isDivisibleByK --> A[i] % K === 0
  *  [6, 11, 2]
  */
-function solution(A: number, B: number, K: number): number {
+function countDiv(A: number, B: number, K: number): number {
   let range = new Array(); // numbers to check
   let divisible = new Array(); // store divisble numbers
 

@@ -11,7 +11,7 @@
  * - The function should return -1 if the number of pairs of passing cars exceeds 1,000,000,000.
  * @SEE https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/
  */
-function solution(A: number[]): number {
+function passingCars(A: number[]): number {
   /**
    * steps:
    * - find with which number array starts
