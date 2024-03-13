@@ -65,6 +65,11 @@ function passingCars(A: number[]): number {
 
 /**
  * improvements:
- * note to self: is there any smart math for this?
- * - probably in a second iteration: keep a counter of 'different cars to the right of my position' and handle that instead of nested for-loop
+ *
+ * - iterate through the array of cars. for every car in the array:
+ *   - count cars going east; store sum in `carsGoingEast`
+ *   - count number of passed cars; store sum in `passedCars`
+ *   - when encountering a car traveling west (opposite), increase `passedCars` with the number of `carsGoingEast`
+ *
+ * return passedCars;
  */
