@@ -18,22 +18,13 @@ function countDiv(A: number, B: number, K: number): number {
   let range = new Array(); // numbers to check
   let divisible = new Array(); // store divisble numbers
 
-  // populate array; start with value of A, end with value of B
+  let divisibleCount = 0;
+
   for (let i = A; i <= B; i++) {
-    range.push(i);
+    if (i % K === 0) divisibleCount++;
   }
 
-  /**
-   * check if a number can be divided;
-   * - it can be divided is A[i] % K ===0
-   * - if that's the case, store it
-   *
-   */
-  range.map((v) => {
-    if (v % K === 0) divisible.push(v);
-  });
-
-  return divisible.length;
+  return divisibleCount;
 }
 
 /**
@@ -52,3 +43,14 @@ function countDiv(A: number, B: number, K: number): number {
  * - if K > v, skip
  * - this can be done based on index, because the starting integer of the array is known and so is the length
  */
+
+const testCountDiv: number[][] = [[6, 11, 2, 3]]; // [A,B,K,expected]
+
+testCountDiv.map((test) => {
+  console.log(
+    "got:",
+    countDiv(test[0], test[1], test[2]),
+    "expected:",
+    test[3]
+  );
+});
