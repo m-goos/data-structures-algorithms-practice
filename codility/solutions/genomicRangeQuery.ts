@@ -77,3 +77,8 @@ function genomicRangeQuery(S: string, P: number[], Q: number[]): number[] {
  */
 
 console.log(genomicRangeQuery("CAGCCTA", [2, 5, 0], [4, 5, 6]));
+
+/**
+ * improvements for next iteration (first thoughts):
+ * - when encountering an `A` (impact factor of 1) in any sequence, stop checking the sequence
+ */
