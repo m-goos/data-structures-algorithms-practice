@@ -1,3 +1,5 @@
+import { test } from "../../util/test";
+
 /**
  * goal:
  *
@@ -104,9 +106,4 @@ const testminWithoutFive: { input: number; expected: number }[] = [
   { input: 5, expected: 0 },
 ];
 
-testminWithoutFive.map((test) => {
-  console.log("\n");
-  console.log("output:  ", minWithoutFive(test.input));
-  console.log("expected:", test.expected);
-  console.log("input:   ", test.input);
-});
+test(testminWithoutFive, minWithoutFive);
