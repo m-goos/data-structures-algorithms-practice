@@ -1,12 +1,12 @@
 import { test } from "../../util/test";
 
 /**
- * A notification message is given and a maximum length for that message.
+ * A notification message is given with a maximum allowed length for that message.
  *
  * When the message exceeds the maximum allowed length, it should be cropped, according to the following rules:
- * - when cropped, end with ` ...`
  * - no spaces at the start or end of the cropped messages
  * - only full words, no truncated words
+ * - when cropped, end with ` ...` (space...)
  * - there should always be a space between words and '...'
  *
  * @param message input message - to be cropped following specific rules
@@ -23,8 +23,6 @@ function cropMessage2(message: string, maxLength: number): string {
   const messageArray = message.split(" ");
   let croppedMessage = "";
   let maxCroppedLength = maxLength - 3; // '...' (...) takes up 3 characters
-
-  console.log({ messageArray });
 
   /**
    * Add another word if:
@@ -46,7 +44,7 @@ function cropMessage2(message: string, maxLength: number): string {
   }
 
   /**
-   * after constructing the notification up to the length limit, add '...'
+   * after constructing the cropped message up to the length limit, add '...'
    */
   croppedMessage += "...";
 
