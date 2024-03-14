@@ -1,6 +1,6 @@
 // TODO - simplify solution
 
-import { test } from "../../util/test";
+import { test } from "../util/test";
 
 /**
  * goal:
