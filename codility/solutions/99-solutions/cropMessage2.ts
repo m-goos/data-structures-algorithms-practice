@@ -22,14 +22,13 @@ function cropMessage2(message: string, maxLength: number): string {
   // start constructing the cropped message
   const messageArray = message.split(" ");
   let croppedMessage = "";
-  let maxCroppedLength = maxLength - 3; // ' ...' (space...) takes up 4 characters
+  let maxCroppedLength = maxLength - 3; // '...' (...) takes up 3 characters
 
   console.log({ messageArray });
 
   /**
    * Add another word if:
-   * - `notification` is shorter than `maxLength + newWord.length + 4`
-   *   - note: `3` characters is for `...`
+   * - `croppedMessage` plus one more word (with space) is shorter than `maxCroppedLength`
    *
    * loop over array with words
    * - for every iteration, add a word until length is reached
@@ -41,10 +40,7 @@ function cropMessage2(message: string, maxLength: number): string {
     // 1 accounts for space after word
     if (croppedMessage.length + nextWord.length + 1 <= maxCroppedLength) {
       croppedMessage += nextWord + " ";
-    }
-
-    // when max length reached, stop loop
-    if (croppedMessage.length + nextWord.length + 1 > maxCroppedLength) {
+    } else {
       break;
     }
   }
@@ -75,7 +71,7 @@ const testCropMessage2 = [
     expected: "hello",
   },
   {
-    input: ["five", 3],
+    input: ["four", 3],
     expected: "...",
   },
   {
