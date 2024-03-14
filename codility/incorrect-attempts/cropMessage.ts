@@ -1,4 +1,4 @@
-import { test } from "../../util/test";
+import { test } from "../util/test";
 
 // TODO - revise / fix
 // problem: I'm exiting 1 word too early..!
