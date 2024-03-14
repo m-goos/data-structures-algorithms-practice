@@ -95,15 +95,15 @@ function minWithoutFive(N: number): number {
   return isNegative ? result * -1 : result;
 }
 
-const testminWithoutFive: { input: number; expected: number }[] = [
-  { input: -5859, expected: -589 },
-  { input: 15958, expected: 1958 },
-  { input: -5000, expected: 0 },
-  { input: -598595, expected: -59859 },
-  { input: 5000, expected: 0 },
-  { input: 654321, expected: 64321 },
-  { input: 15, expected: 1 },
-  { input: 5, expected: 0 },
+const testminWithoutFive = [
+  { input: [-5859], expected: -589 },
+  { input: [15958], expected: 1958 },
+  { input: [-5000], expected: 0 },
+  { input: [-598595], expected: -59859 },
+  { input: [5000], expected: 0 },
+  { input: [654321], expected: 64321 },
+  { input: [15], expected: 1 },
+  { input: [5], expected: 0 },
 ];
 
 test(testminWithoutFive, minWithoutFive);

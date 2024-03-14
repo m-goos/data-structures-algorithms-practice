@@ -1,5 +1,12 @@
+import { test } from "../../util/test";
+
 // TODO - revise / fix
 // problem: I'm exiting 1 word too early..!
+
+/**
+ * simplify logic:
+ * if the
+ */
 
 //
 /**
@@ -32,9 +39,6 @@ function cropMessage(message: string, K: number): string {
   let cropped = splitAtSpace[0]; // initialize to first word
   let finalMessage = ""; //
   let isComplete = false;
-
-  console.log({ splitAtSpace });
-  console.log({ cropped });
 
   if (K <= 4) return dots;
   if (K >= length) return message;
@@ -92,19 +96,36 @@ function cropMessage(message: string, K: number): string {
         }
       }
     }
-
-    console.log({ cropped });
   });
 
-  console.log({ length, K });
-  // first run
   return finalMessage;
 }
 
-/**
- * test cases
- * - ('yes hello', 9) --> expect 'yes hello'
- * - ('yes hello its me', 9) --> expect 'yes ...'
- */
+const testCropMessage = [
+  {
+    input: ["yes hello", 9],
+    expected: "yes hello",
+  },
+  {
+    input: ["yes hello its me", 9],
+    expected: "yes hello",
+  },
+  {
+    input: ["hello", 9],
+    expected: "hello",
+  },
+  {
+    input: ["five", 3],
+    expected: "...",
+  },
+  {
+    input: ["hi", 3],
+    expected: "hi",
+  },
+  {
+    input: ["hi", 2],
+    expected: "hi",
+  },
+];
 
-//
+test(testCropMessage, cropMessage);

@@ -1,4 +1,5 @@
-type TestInput = { input: number; expected: number };
+/** input for functions varies */
+type TestInput = { input: unknown[]; expected: unknown };
 
 export const test = (testInput: TestInput[], fn: Function) => {
   console.log("-------------------");
@@ -6,7 +7,7 @@ export const test = (testInput: TestInput[], fn: Function) => {
   console.log("Testing ", fn.name);
   testInput.map((t) => {
     console.log(""); // empty line
-    console.log("output:  ", fn(t.input));
+    console.log("output:  ", fn(...t.input));
     console.log("expected:", t.expected);
     console.log("input:   ", t.input);
   });
