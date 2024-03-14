@@ -28,11 +28,12 @@ function cropMessage2(message: string, maxLength: number): string {
 
   /**
    * Add another word if:
-   * - `notification` is shorter than `maxLength - newWord.length - 4`
-   *   - note: `3` characters is for `...` (...)
+   * - `notification` is shorter than `maxLength + newWord.length + 4`
+   *   - note: `3` characters is for `...`
    *
    * loop over array with words
-   * for every iteration, add a word until length is reached
+   * - for every iteration, add a word until length is reached
+   * - when length is reached, break out of loop
    */
   for (let i = 0; i < messageArray.length; i++) {
     let nextWord = messageArray[i];
@@ -51,7 +52,6 @@ function cropMessage2(message: string, maxLength: number): string {
   /**
    * after constructing the notification up to the length limit, add '...'
    */
-
   croppedMessage += "...";
 
   return croppedMessage;
